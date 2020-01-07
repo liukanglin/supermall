@@ -1,6 +1,7 @@
 <template>
   <div class="goods-list-item" @click="itemclick">
     <img v-lazy="showImg" alt @load="imgload" />
+    <!-- <img v-lazy="Item.img" alt @load="imgload" /> -->
     <div class="goods-info">
       <p>{{ Item.title }}</p>
       <span class="price">¥{{ Item.price }}</span>
@@ -22,7 +23,7 @@ export default {
   },
   computed: {
     showImg() {
-      return this.Item.image || this.Item.show.img;
+      return this.Item.img || this.Item.image || this.Item.show.img;
     }
   },
   methods: {
